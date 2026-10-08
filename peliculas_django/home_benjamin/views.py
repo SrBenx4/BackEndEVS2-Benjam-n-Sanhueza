@@ -14,39 +14,31 @@ def inicio(request):
         }
     ]
 
-    return render(
-        request,
-        "inicio.html",
-        {"generos": generos}
-    )
+    return render(request, "inicio.html", {"generos": generos})
 
 
 def accion(request):
 
     peliculas = [
         {
-            "nombre": "Batman: el señor de la noche",
-            "edad": "+14",
-            "imagen": "images/batman.jpg"
+            "nombre": "Batman",
+            "edad": "+13",
+            "imagen": "images/Batman.jpg"
         },
         {
             "nombre": "Matrix",
             "edad": "+14",
-            "imagen": "images/matrix.jpg"
+            "imagen": "images/Matrix.jpg"
         }
     ]
 
-    return render(
-        request,
-        "accion.html",
-        {"peliculas": peliculas}
-    )
+    return render(request, "accion.html", {"peliculas": peliculas})
 
 
 def terror(request):
 
     peliculas = [
-           {
+        {
             "nombre": "Five Nights at Freddy's",
             "edad": "+14",
             "imagen": "images/fnaf.jpg"
@@ -58,8 +50,4 @@ def terror(request):
         }
     ]
 
-    return render(
-        request,
-        "terror.html",
-        {"peliculas": peliculas}
-    )
+    return render(request, "terror.html", {"peliculas": peliculas})

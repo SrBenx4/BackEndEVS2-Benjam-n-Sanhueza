@@ -1,8 +1,26 @@
-{% extends 'base.html' %} {% block content %}
-Géneros de Películas
-{% for genero in generos %}
-{{ genero.nombre }}
-{{ genero.descripcion }}
+{% extends 'base.html' %}
 
-{% endfor %}
+{% block content %}
+
+<h1 class="mb-4">Géneros de Películas</h1>
+
+<div class="row">
+    {% for genero in generos %}
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h3>{{ genero.nombre }}</h3>
+                <p>{{ genero.descripcion }}</p>
+
+                {% if genero.nombre == 'Acción' %}
+                    <a href="{% url 'home:accion' %}" class="btn btn-primary">Ver películas</a>
+                {% elif genero.nombre == 'Terror' %}
+                    <a href="{% url 'home:terror' %}" class="btn btn-primary">Ver películas</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}

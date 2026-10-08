@@ -1,9 +1,0 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-Películas de Acción
-{% for pelicula in peliculas %}
-{% static pelicula.imagen %}
-{{ pelicula.nombre }}
-Edad recomendada: {{ pelicula.edad }}
-
-{% endfor %}
-{% endblock %}
